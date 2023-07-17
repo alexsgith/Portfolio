@@ -32,8 +32,20 @@
             <li><a href="#" class="action-btn">Get Resume</a></li>
         </div>
     </header>
+    <div class="container">
+        <div class="hero-pic">
+            <img src="" alt="">
+        </div>
+    </div>
     <script>
-        const toggleBtn = document.querySelector
+        const toggleBtn = document.querySelector('.toggle')
+        const toggleBtnIcon = document.querySelector('.toggle i')
+        const dropdown = document.querySelector('.dropdown')
+        toggleBtn.onclick = function () {
+            dropdown.classList.toggle('open')
+            const isOpen = dropdown.classList.contains('open')
+            toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
+        }
     </script>
 </body>
 
