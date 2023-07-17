@@ -14,6 +14,8 @@ body {
     background-position: center;
 }
 
+/* ------------------- Navigation ------------------------*/
+
 li {
     list-style: none;
 }
@@ -111,7 +113,97 @@ header {
     justify-content: center;
 }
 
-/* Responsiveness codes */
+/* ------------------------------- Body --------------------------------*/
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.container .hero-pic {
+    width: 250px;
+    height: 300px;
+    border-radius: 20%;
+    overflow: hidden;
+    box-shadow: 5px 7px 25px rgba(0, 0, 0, .5);
+}
+
+.hero-pic img {
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+}
+
+.hero-pic img:hover {
+    transform: scale(1.1);
+}
+
+.hero-text {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-text h5 {
+    color: #fff;
+    font-size: 14px;
+}
+
+.hero-text h5 span {
+    color: #9CF6FB;
+    font-size: 16px;
+}
+
+.hero-text h1 {
+    color: #9CF6FB;
+    font-size: 3rem;
+}
+
+.hero-text p {
+    color: #fff;
+    text-align: justify;
+}
+
+.hero-text .social i {
+    color: #e5e5e5;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 1s;
+}
+
+.hero-text .social i:hover {
+    color: #9CF6FB;
+    transform: rotate(360deg);
+}
+
+.btn-group {
+    margin: 45px 0;
+}
+
+.btn-group .btn {
+    color: #fff;
+    border-color: #9CF6FB;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 12px 25px;
+    margin: 5px 0;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid #e5e5e5;
+}
+
+.btn-group .btn:hover {
+    color: #222;
+    background-color: #9CF6FB;
+}
+
+.btn.active {
+    border-color: #9CF6FB;
+    box-shadow: 5px 7px 25px rgba(0, 0, 0, .5);
+}
+
+/* ------------------- Responsiveness codes ----------------------------*/
 @media(max-width:800px) {
 
     .navbar .links,
@@ -125,6 +217,23 @@ header {
 
     .dropdown {
         display: block;
+    }
+
+    .container {
+        flex-direction: column;
+        padding-top: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-text {
+        padding: 40px 0px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-text p {
+        text-align: center;
     }
 }
 

@@ -20,7 +20,7 @@
                 <li><a href="#">About Me</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <a href="#" class="action-btn">Get Resume</a>
+            <a href="Assets/AlexSaviCV.pdf" target="_blank" class="action-btn">Get Resume</a>
             <div class="toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -29,14 +29,40 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">About Me</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#" class="action-btn">Get Resume</a></li>
+            <li><a href="Assets/AlexSaviCV.pdf" target="_blank" class="action-btn">Get Resume</a></li>
         </div>
     </header>
     <div class="container">
         <div class="hero-pic">
-            <img src="" alt="">
+            <img src="Assets/AlexSavi.png" alt="">
+        </div>
+        <div class="hero-text">
+            <h5>Hi I'm <span class="input">Unity Developer</span></h5>
+            <h1>Alex Savi</h1>
+            <p>I am skilled and creative game developer, application developer, and UI/UX designer with
+                a passion for crafting immersive digital experiences. Enter a world where imagination meets
+                innovation with Alex Savi. </p>
+            <!-- <p>Where Imagination Meets Innovation. A master of coding, design, and all things digital, I am a dynamic
+                game developer, application wizard, and visionary UI/UX designer. With a flair for crafting immersive
+                experiences, who breathes life into virtual worlds, seamlessly blending cutting-edge technologies with
+                artistic finesse. From captivating gameplay to intuitive applications and visually stunning interfaces,
+                my work is a testament to the perfect marriage of technical expertise and boundless creativity. With
+                a finger on the pulse of industry trends, I continually pushes the boundaries of possibility,
+                delivering exceptional results that exceed expectations. Enter a world where imagination meets
+                innovation with Alex Savi.</p> -->
+            <div class="btn-group">
+                <a href="#" class="btn active"> More About Me</a>
+            </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/alexsavi/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.buymeacoffee.com/alexsavi" target="_blank"><i class="fa-solid fa-mug-hot"></i></a>
+            </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.js"
+        integrity="sha512-ioFpA4cD4gmoOhHglW4f6gep7w+YL7UMKtXx4ebJ5NN4SscmnZYYmSjkA+DaHGvBI4wpYVPx2C7DmmV9TgbIbQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const toggleBtn = document.querySelector('.toggle')
         const toggleBtnIcon = document.querySelector('.toggle i')
@@ -46,6 +72,7 @@
             const isOpen = dropdown.classList.contains('open')
             toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
         }
+        var typed = new Typed(".input", { strings: ["Game Developer", "Application Develoer", "Web Developer", "UI/UX Designer", "Game Developer"], typedSpeed: 70, backSpeed: 20, loop: true, })
     </script>
 </body>
 
