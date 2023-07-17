@@ -120,6 +120,9 @@ header {
     justify-content: space-around;
     align-items: center;
     padding-top: 4rem;
+    z-index: 1;
+    -webkit-transform: translate3d(0%, -200%, 0);
+    transform: translate3d(0%, -200%, 0);
 }
 
 .container .hero-pic {
