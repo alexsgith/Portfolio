@@ -227,6 +227,8 @@ header {
         padding-top: 2rem;
         justify-content: center;
         align-items: center;
+        -webkit-transform: translate3d(0%, -100%, 0);
+        transform: translate3d(0%, -100%, 0);
     }
 
     .hero-text {
