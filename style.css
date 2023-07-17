@@ -9,9 +9,9 @@
 body {
     height: 100vh;
     background-color: #222;
-    /* background-image: url();
+    background-image: url(Assets/shilloet.png);
     background-size: cover;
-    background-position: center; */
+    background-position: center;
 }
 
 li {
@@ -84,7 +84,8 @@ header {
     position: absolute;
     right: 2rem;
     top: 60px;
-    width: 300px;
+    height: 0;
+    width: 250px;
     background: rgba(255, 255, 255, .1);
     backdrop-filter: blur(15px);
     border-radius: 10px;
@@ -124,5 +125,12 @@ header {
 
     .dropdown {
         display: block;
+    }
+}
+
+@media(max-width: 500px) {
+    .dropdown {
+        left: 2rem;
+        width: unset;
     }
 }
