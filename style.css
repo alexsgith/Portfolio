@@ -88,7 +88,7 @@ header {
     top: 60px;
     height: 0;
     width: 250px;
-    background: rgba(255, 255, 255, .1);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
@@ -235,6 +235,7 @@ header {
 
     .hero-text p {
         text-align: center;
+        padding: 15px;
     }
 }
 
@@ -243,4 +244,92 @@ header {
         left: 2rem;
         width: unset;
     }
+}
+
+/* ----------footer------------------------ */
+/* Footer Styles */
+
+footer {
+    background-color: rgba(225, 225, 225, 0.3);
+    box-shadow: rgba(255, 255, 255, 0.5);
+    padding: 30px 0;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    bottom: 0;
+    transform: scale(0.9);
+    width: 100%;
+    border-radius: 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    transition: 1s;
+}
+
+footer:hover {
+    transform: scale(.95);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    padding-left: 20px;
+    color: #e5e5e5;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #9CF6FB;
+}
+
+.contact-info p {
+    font-size: 16px;
+    padding-bottom: 3px;
+}
+
+.contact-info p i {
+    padding-right: 3px;
+}
+
+.footer-right-reserved p {
+    color: #e5e5e5;
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+/* Set minimum height for content area to make footer stick at the bottom */
+.content-area {
+    min-height: calc(100vh - 120px);
+    /* 120px is the combined height of the header and footer */
+}
+
+/* Responsive Footer Styles */
+
+@media(max-width: 800px) {
+    footer {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        /* Change position to relative for responsiveness */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .footer-right-reserved p {
+        margin-top: 10px;
+        padding-right: 0px;
+    }
+
 }

@@ -1,0 +1,399 @@
+html,
+body {
+  height: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.max-height {
+  height: 100%;
+}
+
+.VTA {
+  /*VERTICAL ALIGN*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.paralax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* --- TITLE SECTION --- */
+.TitleSection {
+  /*Photo by Matthew Smith on Unsplash*/
+  background-image: url("../Assets/shilloet.png");
+  color: #9CF6FB;
+  height: 150px;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.TitleSection h1 {
+  margin: 0;
+  /*VERTICAL ALIGN*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /*FONT DESIGN*/
+  letter-spacing: -3px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 4em;
+}
+
+/* --- TITLE SECTION --- */
+
+/* --- HOME --- */
+.home {
+  /*Photo by Carmine De Fazio on Unsplash*/
+  height: 100%;
+  color: #9CF6FB;
+  box-shadow: 0 0 15px grey;
+  margin-bottom: 0;
+  background-image: url("../Assets/shilloet.png");
+
+}
+
+.home a {
+  color: white;
+}
+
+.homeSocial a:hover {
+  color: #9CF6FB;
+}
+
+#homeH1 {
+  /*VERTICAL ALIGN*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#homeH1 h1 {
+
+  letter-spacing: 1px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 100px;
+  line-height: .75;
+  margin: 25px;
+  opacity: 0;
+
+  /*ANIMATION SETTING*/
+  animation-name: spreadText;
+  animation-duration: 4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+#homeH1 i {
+  animation-name: spreadIcons;
+  animation-duration: 4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes spreadText {
+  from {
+    letter-spacing: -20px;
+    opacity: 0;
+  }
+
+  to {
+    letter-spacing: 1px;
+    opacity: 1;
+  }
+}
+
+@keyframes spreadIcons {
+  from {
+    margin: 0;
+    opacity: 0;
+  }
+
+  to {
+    margin: 0 10px 0 10px;
+    opacity: 1;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    margin-top: 0;
+  }
+
+  100% {
+    margin-top: 20px;
+  }
+}
+
+.welcomeI {
+  margin: 0;
+  /*VERTICAL ALIGN*/
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*ANIMATION SETTING*/
+  animation-name: upDown;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+/* --- HOME --- */
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+/* --- ABOUT SECTION --- */
+#About {
+  margin-top: 50px;
+
+}
+
+.Me-tag {
+  font-size: 13em;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  margin-top: 5%;
+}
+
+.Me-tag svg {
+  width: 250px;
+  height: 250px;
+}
+
+.Me-tag text {
+  fill: url(#forest);
+}
+
+.text-about {
+  /* margin-top: 10%; */
+  margin-bottom: 10%;
+  font-size: 1.7em;
+  text-align: justify;
+}
+
+.img-about {
+  box-shadow: 0 0 5px grey;
+}
+
+/* --- ABOUT SECTION --- */
+
+/* --- PORTFOLIO SECTION --- */
+#portfolioContent a {
+  text-decoration: none;
+  color: black;
+}
+
+#portfolioContent .row {
+  height: 350px;
+  overflow: hidden;
+}
+
+#portfolioContent .row div {
+  overflow: hidden;
+}
+
+#portfolioContent .row div span {
+  text-decoration: none;
+  position: relative;
+  font-size: x-large;
+  display: inline-block;
+}
+
+#portfolioContent .row div p span:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+  transition: 0.4s;
+}
+
+#portfolioContent .row div p span:hover:after {
+  width: 100%;
+}
+
+.showcase-1 div p span:after {
+  border-bottom: 2px solid #6441A4;
+}
+
+.showcase-2 img {
+  width: 130%;
+}
+
+.showcase-2 div p span:after {
+  border-bottom: 2px solid #FF99A2;
+}
+
+.showcase-3 img {
+  width: 110%;
+}
+
+.showcase-3 div p span:after {
+  border-bottom: 2px solid #57695B;
+}
+
+/* --- PORTFOLIO SECTION --- */
+
+/* --- CONTACT SECTION --- */
+#Contact {
+  margin-bottom: 50px;
+}
+
+.text-contact {
+  font-size: x-large;
+  overflow: auto;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #72907B;
+  width: 80%;
+  margin: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 5px grey;
+  overflow: hidden;
+  color: white;
+
+}
+
+.card img {
+  border-radius: 0;
+  box-shadow: 0 0 5px grey;
+}
+
+.cardText {
+  margin: 10px;
+}
+
+.cardText a {
+  color: #2F4F38;
+}
+
+.cardText a:hover {
+  color: #4B7E5A;
+}
+
+/* --- CONTACT SECTION --- */
+
+/* --- FOOTER SECTION --- */
+footer {
+  height: 70px;
+  padding-top: 20px;
+  box-shadow: 0 0 5px grey;
+  color: white;
+  background-image: url("../Assets/shilloet.png");
+}
+
+/* --- FOOTER SECTION --- */
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+  #homeH1 h1 {
+    font-size: 70px;
+  }
+
+  .col-manage {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .showcase-1 {
+    background-image: url("../Assets/unity.png");
+  }
+
+  .SC div {
+    background: rgba(100, 100, 100, 0.3);
+    transition: 0.4s;
+  }
+
+  .SC div:hover {
+    background: rgba(100, 100, 100, 0);
+  }
+
+  .showcase-2 {
+    background-image: url("../Assets/uiux.jpg");
+  }
+
+  .showcase-3 {
+    background-image: url("../Assets/app.jpg");
+  }
+
+  .SC div>span {
+    padding: 25px;
+    background: white;
+  }
+
+  .showcase-1 div>span {
+    border: 3px solid #6441A4;
+  }
+
+  .showcase-2 div>span {
+    border: 3px solid #FF99A2;
+  }
+
+  .showcase-3 div>span {
+    border: 3px solid #57695B;
+  }
+
+  .text-about {
+    font-size: 1.5rem;
+  }
+
+  .text-about h4 {
+    font-size: 1.5rem;
+  }
+
+  footer h4 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #homeH1 h1 {
+    font-size: 50px;
+  }
+
+  .TitleSection h1 {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-device-width: 1023px) {
+  .paralax {
+    background-attachment: scroll;
+  }
+}
