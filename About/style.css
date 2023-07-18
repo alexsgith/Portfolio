@@ -111,6 +111,10 @@ body {
   animation-timing-function: ease-out;
 }
 
+#resumeclick {
+  font-size: 1.5rem;
+}
+
 @keyframes spreadText {
   from {
     letter-spacing: -20px;
@@ -379,6 +383,11 @@ footer {
 
   footer h4 {
     font-size: 1rem;
+  }
+
+  #resumeclick {
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
 }
 
