@@ -244,6 +244,15 @@ img {
   width: 100%;
 }
 
+#quote {
+  color: brown;
+  font-weight: 600;
+}
+
+#quote:hover {
+  color: green;
+}
+
 .showcase-1 div p span:after {
   border-bottom: 2px solid #6441A4;
 }
