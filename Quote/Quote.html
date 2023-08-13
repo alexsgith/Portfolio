@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Get Quote</title>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="wrapper">
+    <div class="profile-card js-profile-card">
+      <div class="profile-card__img">
+        <a href="../index.html"><img src="../Assets/pic.JPG" alt="profile card"></a>
+      </div>
+
+      <div class="profile-card__cnt js-profile-cnt">
+        <div class="container">
+          <input required="" type="text" name="text" class="input">
+          <label class="label">Name</label>
+        </div><br><br>
+        <div class="container">
+          <input required="" type="text" name="text" class="input">
+          <label class="label">Phone</label>
+        </div><br><br>
+        <div class="container">
+          <input required="" type="text" name="text" class="input">
+          <label class="label">Mail</label>
+        </div><br><br>
+        <div class="container" id="message">
+          <textarea class="input" cols="2"
+            rows="2">Develop a comprehensive cross-platform shopping application for company XYX that caters to the diverse needs of our customers. We envision a user-friendly interface with 6-7 integrated modules that seamlessly guide users through the entire shopping process, ultimately culminating in a secure and efficient payment experience. Our Budget is around XYZ-XYZ.</textarea>
+          <label class="label">Please Describe the Work</label>
+        </div>
+        <form class="profile-card-form">
+          <div class="profile-card-form__bottom">
+            <button class="profile-card__button button--blue js-message-close">
+              Send Quote
+            </button>
+
+            <a href="../index.html" class="profile-card__button button--gray js-message-close">
+              Go Home
+            </a>
+          </div>
+        </form>
+
+        <div class="profile-card__overlay js-message-close"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
