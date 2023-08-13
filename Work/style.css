@@ -1,0 +1,178 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #171414;
+}
+
+.image-grid {
+  padding: 12px;
+}
+
+.image-row {
+  display: flex;
+}
+
+.image-row .image {
+  margin: 12px;
+  height: 240px;
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.15),
+    0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.cardBody {
+  width: 50%;
+  height: 50%;
+  top: 0;
+  right: 0;
+  background: #171414;
+  position: absolute;
+}
+
+.image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 8px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s, transform 0.3s;
+  text-align: justify;
+}
+
+.image:hover .image-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-01 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-12/29090067_1208650909270305_6935043582151622656_n_17853417226152334.jpg@500w_0e.jpg');
+  flex: 2;
+}
+
+.image-02 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-12/109096174_941152346310653_7033337393038933400_n_17846005295252906.jpg@500w_0e.jpg');
+  flex: 1;
+}
+
+.image-03 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-12/97523319_683291382214913_206637477919739570_n_18118435030129304.jpg@500w_0e.jpg');
+  flex: 1;
+}
+
+.image-04 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-12/91040106_222325079130343_4602180460155007176_n_18100858828136995.jpg@500w_0e.jpg');
+  flex: 1;
+}
+
+.image-05 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-12/101493818_260342681843304_633170315530601876_n_17885550412598428.jpg@500w_0e.jpg');
+  flex: 2;
+}
+
+.image-06 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-13/Screenshot_20230812_at_9.54.55_PM2.png@500w_0e.jpg');
+  flex: 2;
+}
+
+.image-07 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-13/Screenshot_20230813_at_8.53.08_AM.png@500w_0e.jpg');
+  flex: 1;
+}
+
+.image-08 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-13/Screenshot_20230813_at_8.54.56_AM.png@500w_0e.jpg');
+  flex: 2;
+}
+
+.image-09 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-13/Screenshot_20230813_at_8.53.49_AM.png@500w_0e.jpg');
+  flex: 1;
+}
+
+.image-10 {
+  background-image: url('https://cdn.buymeacoffee.com/uploads/gallery/3985463/2023-08-13/Screenshot_20230813_at_8.56.09_AM.png@500w_0e.jpg');
+  flex: 1;
+}
+
+.image-11 {
+  background-image: url('https://images.unsplash.com/photo-1616418672515-1c2b39e219d3?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE5N3w2c01WalRMU2tlUXx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');
+  flex: 1;
+}
+
+.image-12 {
+  background-image: url('https://images.unsplash.com/photo-1548164806-9709e698bfc8?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIzOHw2c01WalRMU2tlUXx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');
+  flex: 1;
+}
+
+.title {
+  text-align: center;
+  color: azure;
+}
+
+.floating-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.floating-button button {
+  padding: 10px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.floating-button a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+footer {
+  text-align: center;
+  color: rgb(185, 185, 185);
+  font-size: 12px;
+}
+
+@media screen and (max-width: 400px) {
+  .image-row {
+    flex-direction: column;
+  }
+
+  .image-row .image {
+    flex-basis: auto;
+  }
+
+  .title {
+    text-align: left;
+    padding-left: 5%;
+    color: azure;
+  }
+
+}
