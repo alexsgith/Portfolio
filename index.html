@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Savi</title>
+    <title>Alex Savi | Game Dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -12,82 +17,108 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo"><a href="#">Alex Savi</a></div>
-            <ul class="links">
-                <li><a href="#">Home</a></li>
-                <li><a href="About/About.html">About Me</a></li>
-                <li><a href="./Work/work.html">Work</a></li>
-            </ul>
-            <a href="./Quote/Quote.html" class="action-btn">Get Quote</a>
+    <!-- Background Animation Canvas -->
+    <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+    </div>
+
+    <!-- Main Game Interface Container -->
+    <div class="game-interface">
+
+        <!-- Top HUD: Navigation -->
+        <header class="top-hud">
+            <div class="hud-line left"></div>
+            <div class="logo">
+                <span class="bracket">[</span> ALEX SAVI <span class="bracket">]</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active" data-text="HOME">HOME</a></li>
+                    <li><a href="About/About.html" data-text="PROFILE">PROFILE</a></li>
+                    <li><a href="./Work/work.html" data-text="MISSIONS">MISSIONS</a></li>
+                    <li><a href="./Quote/Quote.html" class="action-btn">INITIATE_CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="hud-line right"></div>
             <div class="toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
-        </div>
-        <div class="dropdown">
-            <li><a href="#">Home</a></li>
-            <li><a href="About/About.html">Me</a></li>
-            <li><a href="./Work/work.html">Work</a></li>
-            <li><a href="./Quote/Quote.html" target="_blank" class="action-btn">Get Quote</a></li>
-        </div>
-    </header>
-    <div class="container">
-        <div class="hero-pic">
-            <img src="Assets/AlexSavi.png" alt="">
-        </div>
-        <div class="hero-text">
-            <h5>Hi I'm <span class="input">Unity Developer</span></h5>
-            <h1>Alex Savi</h1>
-            <p>I am skilled and creative game developer, application developer, and UI/UX designer with
-                a passion for crafting immersive digital experiences. Enter a world where imagination meets
-                innovation with Alex Savi. </p>
-            <!-- <p>Where Imagination Meets Innovation. A master of coding, design, and all things digital, I am a dynamic
-                game developer, application wizard, and visionary UI/UX designer. With a flair for crafting immersive
-                experiences, who breathes life into virtual worlds, seamlessly blending cutting-edge technologies with
-                artistic finesse. From captivating gameplay to intuitive applications and visually stunning interfaces,
-                my work is a testament to the perfect marriage of technical expertise and boundless creativity. With
-                a finger on the pulse of industry trends, I continually pushes the boundaries of possibility,
-                delivering exceptional results that exceed expectations. Enter a world where imagination meets
-                innovation with Alex Savi.</p> -->
-            <div class="btn-group">
-                <a href="About/About.html" class="btn active"> More About Me</a>
-            </div>
-            <div class="social">
-                <a href="https://www.linkedin.com/in/alexsavi/" target="_blank"><i
-                        class="fa-brands fa-linkedin"></i></a>
+        </header>
 
-                <a href="https://github.com/alexsgith" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <!-- Mobile Dropdown -->
+        <div class="dropdown">
+            <li><a href="#">HOME</a></li>
+            <li><a href="About/About.html">PROFILE</a></li>
+            <li><a href="./Work/work.html">MISSIONS</a></li>
+            <li><a href="./Quote/Quote.html" target="_blank" class="action-btn">INITIATE_CONTACT</a></li>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="character-frame">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="hero-pic">
+                    <img src="Assets/AlexSavi.jpg" alt="Alex Savi Avatar">
+                    <div class="scan-line"></div>
+                </div>
             </div>
-        </div>
+
+            <div class="stats-panel">
+                <div class="panel-header">
+                    <span class="status-dot"></span> SYSTEM ONLINE
+                </div>
+                <div class="hero-text">
+                    <h5>IDENTITY: <span class="input"></span></h5>
+                    <h1>ALEX SAVI</h1>
+                    <div class="bio-text">
+                        <p>Skilled and creative game developer, application developer, and UI/UX designer with a passion
+                            for crafting immersive digital experiences. Enter a world where imagination meets
+                            innovation.</p>
+                    </div>
+
+                    <div class="action-module">
+                        <a href="About/About.html" class="game-btn primary">
+                            <span class="btn-content">VIEW_FULL_STATS</span>
+                            <span class="btn-glitch"></span>
+                        </a>
+                    </div>
+
+                    <div class="social-link-module">
+                        <div class="social-label">CONNECT_UPLINK:</div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/alexsavi/" target="_blank" class="social-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/alexsgith" target="_blank" class="social-icon">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom HUD: Footer -->
+        <footer class="bottom-hud">
+            <div class="hud-decoration"></div>
+            <div class="footer-container">
+                <div class="contact-info">
+                    <span class="label">COMMS:</span>
+                    <span class="value"><i class="fa-solid fa-envelope"></i> alex.savi.kv@gmail.com</span>
+                </div>
+                <div class="footer-right-reserved">
+                    <p>© 2023 ALEX SAVI | SYSTEM VERSION 2.0</p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.js"
-        integrity="sha512-ioFpA4cD4gmoOhHglW4f6gep7w+YL7UMKtXx4ebJ5NN4SscmnZYYmSjkA+DaHGvBI4wpYVPx2C7DmmV9TgbIbQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        const toggleBtn = document.querySelector('.toggle')
-        const toggleBtnIcon = document.querySelector('.toggle i')
-        const dropdown = document.querySelector('.dropdown')
-        toggleBtn.onclick = function () {
-            dropdown.classList.toggle('open')
-            const isOpen = dropdown.classList.contains('open')
-            toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
-        }
-        var typed = new Typed(".input", { strings: ["Game Developer", "Application Develoer", "Web Developer", "UI/UX Designer", "Game Developer"], typedSpeed: 70, backSpeed: 20, loop: true, })
-    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
 </body>
-<footer>
-    <div class="footer-container">
-        <div class="contact-info">
-            <h3>Contact</h3>
-            <p class="phone"><i class="fa-solid fa-phone"></i> ********37</p>
-            <p class="mail"><i class="fa-solid fa-envelope"></i> alex.savi.kv@gmail.com</p>
-            <!-- Add any other contact information you want to display -->
-        </div>
-        <div class="footer-right-reserved">
-            <p>© 2023 Alex Savi | All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
 
 </html>
