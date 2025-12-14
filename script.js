@@ -203,7 +203,7 @@
     // Typed.js Initialization
     if (document.querySelector('.input')) {
         var typed = new Typed(".input", {
-            strings: ["GAME DEVELOPER", "APPLICATION DEVELOPER", "WEB DEVELOPER", "UI/UX DESIGNER"],
+            strings: ["GAME DEVELOPER", "APP DEVELOPER", "WEB DEVELOPER", "UI/UX DESIGNER"],
             typeSpeed: 70,
             backSpeed: 20,
             backDelay: 1000,

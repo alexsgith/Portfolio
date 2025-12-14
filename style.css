@@ -28,8 +28,8 @@ body {
     width: 100vw;
     background-color: var(--bg-dark);
     font-family: var(--font-body);
-    overflow: hidden;
-    /* NO SCROLLING */
+    overflow: auto;
+    /* Enable scrolling for mobile */
     color: var(--text-main);
     position: relative;
 }
@@ -175,6 +175,7 @@ body {
     height: 400px;
     padding: 10px;
     border: 1px solid rgba(156, 246, 251, 0.1);
+    margin-top: 5px;
 }
 
 .corner-decoration {
@@ -338,7 +339,7 @@ body {
 
 .hero-text h1 {
     font-family: var(--font-display);
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 1;
     margin-bottom: 1.5rem;
     background: linear-gradient(180deg, #fff, #888);
@@ -460,8 +461,8 @@ body {
 /* ------------------- Dropdown (Mobile) ------------------------*/
 .dropdown {
     display: none;
-    position: absolute;
-    top: 70px;
+    position: fixed;
+    top: 80px;
     right: 20px;
     width: 200px;
     background: rgba(10, 10, 10, 0.95);
