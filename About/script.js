@@ -1,52 +1,215 @@
+(function () {
 
-$(document).ready(function(){
-  
-$('body').scrollspy({target: ".navbar", offset: 0});
-$("#navbar a").on('click', function(event) {
-  if (this.hash !== "") {
-    event.preventDefault();
-    var hash = this.hash;
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 800, function(){
-      window.location.hash = hash;
+  // --- Canvas Animation (Constellation Effect) ---
+  var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+
+  // Main
+  initHeader();
+  initAnimation();
+  addListeners();
+
+  function initHeader() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    target = { x: width / 2, y: height / 2 };
+
+    largeHeader = document.getElementById('large-header');
+    largeHeader.style.height = height + 'px';
+
+    canvas = document.getElementById('demo-canvas');
+    canvas.width = width;
+    canvas.height = height;
+    ctx = canvas.getContext('2d');
+
+    // create points
+    points = [];
+    for (var x = 0; x < width; x = x + width / 20) {
+      for (var y = 0; y < height; y = y + height / 20) {
+        var px = x + Math.random() * width / 20;
+        var py = y + Math.random() * height / 20;
+        var p = { x: px, originX: px, y: py, originY: py };
+        points.push(p);
+      }
+    }
+
+    // for each point find the 5 closest points
+    for (var i = 0; i < points.length; i++) {
+      var closest = [];
+      var p1 = points[i];
+      for (var j = 0; j < points.length; j++) {
+        var p2 = points[j]
+        if (!(p1 == p2)) {
+          var placed = false;
+          for (var k = 0; k < 5; k++) {
+            if (!placed) {
+              if (closest[k] == undefined) {
+                closest[k] = p2;
+                placed = true;
+              }
+            }
+          }
+
+          for (var k = 0; k < 5; k++) {
+            if (!placed) {
+              if (getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                closest[k] = p2;
+                placed = true;
+              }
+            }
+          }
+        }
+      }
+      p1.closest = closest;
+    }
+
+    // assign a circle to each point
+    for (var i in points) {
+      var c = new Circle(points[i], 2 + Math.random() * 2, 'rgba(255,255,255,0.3)');
+      points[i].circle = c;
+    }
+  }
+
+  // Event handling
+  function addListeners() {
+    if (!('ontouchstart' in window)) {
+      window.addEventListener('mousemove', mouseMove);
+    }
+    window.addEventListener('scroll', scrollCheck);
+    window.addEventListener('resize', resize);
+  }
+
+  function mouseMove(e) {
+    var posx = posy = 0;
+    if (e.pageX || e.pageY) {
+      posx = e.pageX;
+      posy = e.pageY;
+    }
+    else if (e.clientX || e.clientY) {
+      posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+      posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    }
+    target.x = posx;
+    target.y = posy;
+  }
+
+  function scrollCheck() {
+    if (document.body.scrollTop > height) animateHeader = false;
+    else animateHeader = true;
+  }
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    largeHeader.style.height = height + 'px';
+    canvas.width = width;
+    canvas.height = height;
+  }
+
+  // animation
+  function initAnimation() {
+    animate();
+    for (var i in points) {
+      shiftPoint(points[i]);
+    }
+  }
+
+  function animate() {
+    if (animateHeader) {
+      ctx.clearRect(0, 0, width, height);
+      for (var i in points) {
+        // detect points in range
+        if (Math.abs(getDistance(target, points[i])) < 4000) {
+          points[i].active = 0.3;
+          points[i].circle.active = 0.6;
+        } else if (Math.abs(getDistance(target, points[i])) < 20000) {
+          points[i].active = 0.1;
+          points[i].circle.active = 0.3;
+        } else if (Math.abs(getDistance(target, points[i])) < 40000) {
+          points[i].active = 0.02;
+          points[i].circle.active = 0.1;
+        } else {
+          points[i].active = 0;
+          points[i].circle.active = 0;
+        }
+
+        drawLines(points[i]);
+        points[i].circle.draw();
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  function shiftPoint(p) {
+    TweenLite.to(p, 1 + 1 * Math.random(), {
+      x: p.originX - 50 + Math.random() * 100,
+      y: p.originY - 50 + Math.random() * 100, ease: Circ.easeInOut,
+      onComplete: function () {
+        shiftPoint(p);
+      }
     });
   }
-});
 
-$(".navbar-brand").on('click', function(event) {
-  if (this.hash !== "") {
-    event.preventDefault();
-    var hash = this.hash;
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 800, function(){
-      window.location.hash = hash;
-    });
+  // Canvas manipulation
+  function drawLines(p) {
+    if (!p.active) return;
+    for (var i in p.closest) {
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(p.closest[i].x, p.closest[i].y);
+      ctx.strokeStyle = 'rgba(156,217,249,' + p.active + ')';
+      ctx.stroke();
+    }
   }
-});
-$("#home a").on('click', function(event) {
-  if (this.hash !== "") {
-    event.preventDefault();
-    var hash = this.hash;
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 800, function(){
-      window.location.hash = hash;
-    });
+
+  function Circle(pos, rad, color) {
+    var _this = this;
+
+    // constructor
+    (function () {
+      _this.pos = pos || null;
+      _this.radius = rad || null;
+      _this.color = color || null;
+    })();
+
+    this.draw = function () {
+      if (!_this.active) return;
+      ctx.beginPath();
+      ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+      ctx.fillStyle = 'rgba(156,217,249,' + _this.active + ')';
+      ctx.fill();
+    };
   }
-});
 
-   $('body').on('activate.bs.scrollspy', function () {
-    
-   });
+  // Util
+  function getDistance(p1, p2) {
+    return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+  }
 
-  $(".overlayMore").click(function(){
-    $(".overlayMore").animate({"top":"500px"},800).hide(function(){
-      $("#portfolioContent").height("100%");
-    });
-    
-  });
-  
-  
-});
+  // --- UI Logic & Animations ---
+
+  // Mobile Menu Toggle
+  const toggleBtn = document.querySelector('.toggle');
+  const toggleBtnIcon = document.querySelector('.toggle i');
+  const dropdown = document.querySelector('.dropdown');
+
+  if (toggleBtn) {
+    toggleBtn.onclick = function () {
+      dropdown.classList.toggle('open');
+      const isOpen = dropdown.classList.contains('open');
+      toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    };
+  }
+
+  // GSAP Entrance Animations
+  if (typeof gsap !== 'undefined') {
+    const tl = gsap.timeline();
+
+    tl.from('.top-hud', { y: -100, opacity: 0, duration: 1, ease: 'power3.out' })
+      .from('.bottom-hud', { y: 100, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.8')
+      .from('.profile-section', { x: -50, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.5')
+      .from('.data-section', { x: 50, opacity: 0, duration: 1, ease: 'power3.out' }, '-=0.8')
+      .from('.logo', { opacity: 0, duration: 0.5 }, '-=0.5')
+      .from('.main-nav li', { y: -20, opacity: 0, stagger: 0.1, duration: 0.5 }, '-=0.5');
+  }
+
+})();

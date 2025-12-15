@@ -3,140 +3,127 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Alex Savi - About Me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet">
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-  <link rel="stylesheet" href="./style.css">
+  <title>Alex Savi | About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Link to root style for shared variables/base styles if possible, but since we are in subdir, we might need to copy or import -->
+  <!-- Ideally we should refactor to share CSS, but for now we will put everything in About/style.css which will include the home page styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
+  <!-- Background Animation Canvas -->
+  <div id="large-header" class="large-header">
+    <canvas id="demo-canvas"></canvas>
+  </div>
 
-  <body data-spy="scroll" data-target=".navbar" data-offset="0">
+  <!-- Main Game Interface Container -->
+  <div class="game-interface">
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-            <i class="fa fa-align-justify fa-lg" title="Align Justify"></i>
-          </button>
-          <a class="navbar-brand" href="../">Alex Savi</a>
-        </div>
-        <div class="collapse navbar-collapse " id="navbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li class=""><a href="../index.html">Home</a></li>
-            <li><a href="../Work/work.html">Portfolio</a></li>
-            <li><a id="quote" href="../Quote/Quote.html">Get Quote</a></li>
-          </ul>
-        </div>
+    <!-- Top HUD: Navigation -->
+    <header class="top-hud">
+      <div class="hud-line left"></div>
+      <div class="logo">
+        <span class="bracket">[</span> ALEX SAVI <span class="bracket">]</span>
       </div>
-    </nav>
-
-    <section class="container-fluid home text-center paralax" id="welcome-section">
-      <div class="" id="homeH1">
-        <h1><br>About Me</h1>
-        <div class="homeSocial">
-          <a href="https://www.linkedin.com/in/alexsavi/" target="_blank" title="Linedin">
-            <i class="fa fa-linkedin fa-2x fa-fw"></i></a>
-          <a href="https://www.buymeacoffee.com/alexsavi/" title="Resume">
-            <i class="fa fa-coffee fa-2x fa-fw"></i></a>
-          <a href="https://github.com/alexsgith" target="_blank" title="GitHub" id="profile-link"><i
-              class="fa fa-github fa-2x fa-fw"></i></a>
-        </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html" data-text="HOME">HOME</a></li>
+          <li><a href="#" class="active" data-text="PROFILE">PROFILE</a></li>
+          <li><a href="../Work/work.html" data-text="MISSIONS">MISSIONS</a></li>
+          <li><a href="../Quote/Quote.html" class="action-btn">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="hud-line right"></div>
+      <div class="toggle">
+        <i class="fa-solid fa-bars"></i>
       </div>
-      <a href="#About"><i class="fa fa-angle-double-down fa-4x welcomeI"></i></a>
-    </section>
-    <div class="container-fluid">
-      <div class="row about" id="About">
-        <div class="container">
-          <div class="row relative">
-            <div class="col-md-2 Me-tag hidden-sm hidden-xs">
-              <svg>
-                <defs>
-                  <pattern id="forest" patternUnits="userSpaceOnUse" width="300" height="300">
-                    <image xlink:href="../Assets/shilloet.png" width="300" height="300" />
-                  </pattern>
-                </defs>
-                <text y="1.2em">ME</text>
-              </svg>
-            </div>
-            <div class="col-md-6 col-sm-8 text-about text-center max-height">
-              <div class="">
-                <p class="">Where Imagination Meets Innovation. A master of coding, design, and all things digital, I am
-                  a dynamic game developer, application wizard, and visionary UI/UX designer. With a flair for crafting
-                  immersive experiences, who breathes life into virtual worlds, seamlessly blending cutting-edge
-                  technologies with artistic finesse. From captivating gameplay to intuitive applications and visually
-                  stunning interfaces, my work is a testament to the perfect marriage of technical expertise and
-                  boundless creativity. With a finger on the pulse of industry trends, I continually pushes the
-                  boundaries of possibility, delivering exceptional results that exceed expectations.
-                <h4>Enter a world where imagination meets
-                  innovation with Alex Savi.</h4>
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-offset-0 col-sm-4 col-xs-6 col-xs-offset-3">
-              <div class="img-shape"> <img class="img-responsive  img-about" src="../Assets/AlexSavi.png"
-                  alt="my photo">
-              </div>
-            </div>
+    </header>
+
+    <!-- Mobile Dropdown -->
+    <div class="dropdown">
+      <li><a href="../index.html">HOME</a></li>
+      <li><a href="#">PROFILE</a></li>
+      <li><a href="../Work/work.html">MISSIONS</a></li>
+      <li><a href="../Quote/Quote.html" class="action-btn">CONTACT</a></li>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content about-layout">
+
+      <!-- Left Column: Image & Bio -->
+      <div class="profile-section">
+        <div class="character-frame">
+          <div class="corner-decoration top-left"></div>
+          <div class="corner-decoration top-right"></div>
+          <div class="corner-decoration bottom-left"></div>
+          <div class="corner-decoration bottom-right"></div>
+          <div class="hero-pic">
+            <!-- Using the top image from original About page -->
+            <img src="../Assets/AlexSavi.png" alt="Alex Savi">
+            <div class="scan-line"></div>
+          </div>
+        </div>
+
+        <div class="bio-panel">
+          <h3>IDENTITY_LOG</h3>
+          <p>
+            Where Imagination Meets Innovation. A master of coding, design, and all things digital, I am
+            a dynamic game developer, application wizard, and visionary UI/UX designer. With a flair for crafting
+            immersive experiences, who breathes life into virtual worlds, seamlessly blending cutting-edge
+            technologies with artistic finesse. From captivating gameplay to intuitive applications and visually
+            stunning interfaces, my work is a testament to the perfect marriage of technical expertise and
+            boundless creativity. With a finger on the pulse of industry trends, I continually pushes the
+            boundaries of possibility, delivering exceptional results that exceed expectations.
+          </p>
+          <div class="quote-highlight">
+            "Enter a world where imagination meets innovation."
           </div>
         </div>
       </div>
-      <section class="row portfolio" id="projects">
-        <div class="TitleSection paralax">
-          <h1 class="text-center">PASSIONATE ON</h1>
-        </div>
-        <div class="container relative" id="portfolioContent">
-          <div class="row SC showcase-1 paralax project-tile">
-            <div class="col-sm-6 max-height relative">
-              <span class="VTA">
-                <p class="text-right"><span>
-                    Unity Developer
-                  </span></p>
-              </span>
-            </div>
-            <div class="col-sm-6 hidden-xs max-height">
-              <img class=" VTA" src="../Assets/unity.png" />
-            </div>
+
+      <!-- Right Column: Details (Passions, Projects, Tools) -->
+      <div class="data-section">
+
+        <!-- Passionate On -->
+        <div class="data-module">
+          <div class="module-header">
+            <span class="status-dot"></span> SPECIALIZATIONS
           </div>
-          <div class="row SC showcase-2 paralax">
-            <div class="col-sm-6 hidden-xs max-height relative">
-              <img class=" VTA" src="../Assets/uiux.jpg" />
+          <div class="specialization-grid">
+            <div class="spec-card">
+              <div class="spec-icon"><i class="fa-brands fa-unity"></i></div>
+              <div class="spec-title">UNITY DEV</div>
             </div>
-            <div class=" col-sm-6 max-height relative">
-              <span class="VTA">
-                <p class=""> <span> UI/UX Designer </span></p>
-              </span>
+            <div class="spec-card">
+              <div class="spec-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+              <div class="spec-title">UI/UX DESIGN</div>
             </div>
-          </div>
-          <div class="row SC showcase-3 paralax">
-            <div class=" col-sm-6 max-height relative">
-              <span class="VTA">
-                <p class="text-right"> <span>Application Developer</span>
-                </p>
-              </span>
-            </div>
-            <div class="col-sm-6 hidden-xs max-height">
-              <img class=" VTA" src="../Assets/app.jpg" />
+            <div class="spec-card">
+              <div class="spec-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+              <div class="spec-title">APP DEV</div>
             </div>
           </div>
         </div>
-      </section>
-      <div class="row contact" id="Contact">
-        <div class="TitleSection paralax">
-          <h1 class="text-center">DETAILS</h1>
-        </div>
-        <div class="container">
-          <div class="col-sm-6">
-            <h2 class="text-center">Projects</h2>
-            <table class="table table-bordered">
+
+        <!-- Projects Table -->
+        <div class="data-module">
+          <div class="module-header">
+            <span class="status-dot"></span> PROJECT_LOGS
+          </div>
+          <div class="table-container">
+            <table class="cyber-table">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>About</th>
+                  <th>CODENAME</th>
+                  <th>DESCRIPTION</th>
                 </tr>
               </thead>
               <tbody>
@@ -146,28 +133,36 @@
                 </tr>
                 <tr>
                   <td>Travellers Network</td>
-                  <td> Web App to connect travelers around globe</td>
+                  <td>Web App to connect travelers around globe</td>
                 </tr>
                 <tr>
                   <td>Innovative Minds</td>
                   <td>Connect the Startup ideas with Investors</td>
                 </tr>
                 <tr>
-                  <td>resort Admin Panel</td>
+                  <td>Resort Admin Panel</td>
                   <td>System App for admin booking tracking</td>
                 </tr>
                 <tr>
-                  <td>Chat ++ </td>
+                  <td>Chat ++</td>
                   <td>Messenger application using C++</td>
                 </tr>
               </tbody>
             </table>
-            <h2 class="text-center">Tools</h2>
-            <table class="table table-bordered">
+          </div>
+        </div>
+
+        <!-- Tools Table -->
+        <div class="data-module">
+          <div class="module-header">
+            <span class="status-dot"></span> TOOLKIT_DATABASE
+          </div>
+          <div class="table-container">
+            <table class="cyber-table">
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Program</th>
+                  <th>CATEGORY</th>
+                  <th>PROGRAMS</th>
                 </tr>
               </thead>
               <tbody>
@@ -177,7 +172,7 @@
                 </tr>
                 <tr>
                   <td>Languages</td>
-                  <td> C, C++, C#, Java, Dart, Python</td>
+                  <td>C, C++, C#, Java, Dart, Python</td>
                 </tr>
                 <tr>
                   <td>UI/UX</td>
@@ -185,59 +180,46 @@
                 </tr>
                 <tr>
                   <td>Web Dev</td>
-                  <td>Html, Css, JS, Tailwind, Postman</td>
+                  <td>HTML, CSS, JS, Tailwind, Postman</td>
                 </tr>
                 <tr>
                   <td>App Dev</td>
-                  <td>Flutter, Xcode(Swift), FLTK , OpenGl</td>
+                  <td>Flutter, Xcode(Swift), FLTK, OpenGL</td>
                 </tr>
                 <tr>
                   <td>Design</td>
-                  <td>Blender 3D, Photoshop , Premier Pro, After Effects</td>
+                  <td>Blender 3D, Photoshop, Premiere Pro, After Effects</td>
                 </tr>
                 <tr>
                   <td>Database</td>
-                  <td>Firebase, MySql</td>
+                  <td>Firebase, MySQL</td>
                 </tr>
               </tbody>
             </table>
-
           </div>
-          <div class="col-sm-6 ">
-            <div class="card text-center">
-              <img src="../Assets/pic.JPG" class="img-responsive">
-              <div class="cardText">
-                <h2>Alex Savi</h2>
-                <!-- <p><i class="fa fa-phone"></i> ********37</p> -->
-                <p><i class="fa fa-envelope"></i> alex.savi.kv@gmail.com</p>
-                <div class="cardSocial">
-                  <a href="https://www.linkedin.com/in/alexsavi/ga" target="_blank" title="Linedin">
-                    <i class="fa fa-linkedin fa-2x fa-fw"></i></a>
-                  <a href="https://www.buymeacoffee.com/alexsavi" title="Resume">
-                    <i class="fa fa-coffee fa-2x fa-fw"></i></a>
-                  <a href="https://github.com/alexsgith" title="GitHub"><i class="fa fa-github fa-2x fa-fw"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
       </div>
-    </div>
-    <footer class="container-fluid paralax">
-      <div class="row">
-        <div class="col-xs-12">
-          <h4 class="text-center">© 2023 Alex Savi | All Rights Reserved.</h4>
+
+    </main>
+
+    <!-- Bottom HUD: Footer -->
+    <footer class="bottom-hud">
+      <div class="hud-decoration"></div>
+      <div class="footer-container">
+        <div class="contact-info">
+          <span class="label">COMMS:</span>
+          <span class="value"><i class="fa-solid fa-envelope"></i> alex.savi.kv@gmail.com</span>
+        </div>
+        <div class="footer-right-reserved">
+          <p>© 2023 ALEX SAVI | SYSTEM VERSION 2.0</p>
         </div>
       </div>
     </footer>
-  </body>
-  <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-  <script src="./script.js"></script>
+  </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
