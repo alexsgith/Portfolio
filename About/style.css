@@ -353,6 +353,35 @@ body {
   text-decoration: none;
 }
 
+/* Social Links */
+.social-link-module {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.social-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.social-icon {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  transition: 0.3s;
+  margin: 0 0.5rem;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+
 /* =========================================
    ABOUT PAGE SPECIFIC STYLES
    ========================================= */
