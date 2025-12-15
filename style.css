@@ -1,6 +1,7 @@
 :root {
     --primary-color: #9CF6FB;
     --secondary-color: #00ff9d;
+    --error-color: #ff0000;
     --bg-dark: #0a0a0a;
     --panel-bg: rgba(10, 10, 10, 0.75);
     --text-main: #e0e0e0;

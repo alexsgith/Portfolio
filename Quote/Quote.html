@@ -3,61 +3,121 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Get Quote</title>
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./style.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Savi | Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
-  <div class="wrapper">
-    <div class="profile-card js-profile-card">
-      <div class="profile-card__img">
-        <a href="../index.html"><img src="../Assets/pic.JPG" alt="profile card"></a>
+  <!-- Background Animation Canvas -->
+  <div id="large-header" class="large-header">
+    <canvas id="demo-canvas"></canvas>
+  </div>
+
+  <!-- Main Game Interface Container -->
+  <div class="game-interface">
+
+    <!-- Top HUD: Navigation -->
+    <header class="top-hud">
+      <div class="hud-line left"></div>
+      <div class="logo">
+        <span class="bracket">[</span> ALEX SAVI <span class="bracket">]</span>
       </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html" data-text="HOME">HOME</a></li>
+          <li><a href="../About/About.html" data-text="PROFILE">PROFILE</a></li>
+          <li><a href="../Work/work.html" data-text="MISSIONS">MISSIONS</a></li>
+          <li><a href="#" class="active action-btn">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="hud-line right"></div>
+      <div class="toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </header>
 
-      <div class="profile-card__cnt js-profile-cnt">
-        <div class="container">
-          <input required="" type="text" name="text" class="input">
-          <label class="label">Name</label>
-        </div><br><br>
-        <div class="container">
-          <input required="" type="text" name="text" class="input">
-          <label class="label">Phone</label>
-        </div><br><br>
-        <div class="container">
-          <input required="" type="text" name="text" class="input">
-          <label class="label">Mail</label>
-        </div><br><br>
-        <div class="container" id="message">
-          <textarea class="input" cols="2"
-            rows="2">Develop a comprehensive cross-platform shopping application for company XYX that caters to the diverse needs of our customers. We envision a user-friendly interface with 6-7 integrated modules that seamlessly guide users through the entire shopping process, ultimately culminating in a secure and efficient payment experience. Our Budget is around XYZ-XYZ.</textarea>
-          <label class="label">Please Describe the Work</label>
+    <!-- Mobile Dropdown -->
+    <div class="dropdown">
+      <li><a href="../index.html">HOME</a></li>
+      <li><a href="../About/About.html">PROFILE</a></li>
+      <li><a href="../Work/work.html">MISSIONS</a></li>
+      <li><a href="#" class="action-btn">CONTACT</a></li>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="stats-panel quote-panel">
+        <div class="panel-header">
+          <span class="status-dot"></span> CHANNEL CLOSED TEMPORARILY
         </div>
-        <form class="profile-card-form">
-          <div class="profile-card-form__bottom">
-            <button class="profile-card__button button--blue js-message-close">
-              Send Quote
-            </button>
+        <div class="hero-text">
+          <h1>INITIATE CONTACT</h1>
+          <div class="bio-text">
+            <p>Ready to collaborate? Send a transmission to discuss your next mission.</p>
+          </div>
+        </div>
 
-            <a href="../index.html" class="profile-card__button button--gray js-message-close">
-              Go Home
+        <form class="quote-form">
+          <div class="form-group">
+            <input required="" type="text" name="name" class="game-input" placeholder=" ">
+            <label class="game-label">CODENAME (Name)</label>
+          </div>
+          <div class="form-group">
+            <input required="" type="text" name="phone" class="game-input" placeholder=" ">
+            <label class="game-label">FREQUENCY (Phone)</label>
+          </div>
+          <div class="form-group">
+            <input required="" type="text" name="email" class="game-input" placeholder=" ">
+            <label class="game-label">UPLINK (Mail)</label>
+          </div>
+          <div class="form-group full-width">
+            <textarea class="game-input game-textarea" name="message" placeholder=" "
+              rows="4">Develop a comprehensive cross-platform multiplayer game for company XYX...</textarea>
+            <label class="game-label">MISSION BRIEF (Description)</label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="game-btn primary">
+              <span class="btn-content">TRANSMIT_DATA</span>
+              <span class="btn-glitch"></span>
+            </button>
+            <a href="../index.html" class="game-btn secondary">
+              <span class="btn-content">ABORT</span>
+              <span class="btn-glitch"></span>
             </a>
           </div>
         </form>
-
-        <div class="profile-card__overlay js-message-close"></div>
       </div>
+    </main>
 
-    </div>
-
+    <!-- Bottom HUD: Footer -->
+    <footer class="bottom-hud">
+      <div class="hud-decoration"></div>
+      <div class="footer-container">
+        <div class="contact-info">
+          <span class="label">COMMS:</span>
+          <span class="value"><i class="fa-solid fa-envelope"></i> alex.savi.kv@gmail.com</span>
+        </div>
+        <div class="footer-right-reserved">
+          <p>© 2023 ALEX SAVI | SYSTEM VERSION 2.0</p>
+        </div>
+      </div>
+    </footer>
   </div>
 
-  <script src="./script.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="../script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
